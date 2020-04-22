@@ -26,4 +26,9 @@ Utilizando as tecnologias ASP.NET Core 2.2 e Angular 9, deverá ser desenvolvido
  - Caso a documentação escrita aqui não responda as dúvidas em todos os casos, é possível que você tome decisões optando por um ou por outro lado. Apenas é importante saber defender o seu ponto de vista e conhecer outros caminhos que poderiam levar ao mesmo resultado (por que você escolheu essa forma para fazer isso e não de outra?)
  - Um detalhe importante: é interessante que todos os requisitos sejam atendidos, mas deixar de fazer um item ou outro não é o fim do mundo. O objetivo é que dentre esse universo de funcionalidades que foram solicitadas, você consiga mostrar quais você sabe fazer, e além disso, o mais importante: COMO você resolve o problema.
  
+ - Para realizar o teste, crie uma branch a partir da master e após, crie outras duas pastas: 
+   - API: deverá ser criado o projeto aspnet core 2.2
+   - Front: deverá ser criado o projeto angular 9
+ - Após concluido, faça o seu PR. Caso queira explicar alguma coisa sobre o seu código, esse momento é o ideal. Comente o quanto quiser.
+ 
  - Sucesso!
