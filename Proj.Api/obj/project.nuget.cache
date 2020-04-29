@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "k+fVZsh+SXjmNvSFnRckm5JJPWnsCeccazZl6F+TLOzpo4EfvT7p9RDWX6WP47kfcV/hkMzS7DnAzGLQ+cm1zQ==",
+  "dgSpecHash": "os94NU3Jr1qyFyjEh8sVmVFwMUm6+l9YUMm6nZtbSS8Ha7Jg2leqhwj85Uv/Udq3aOM7vn0Vg6d/y625IEMrag==",
   "success": true,
-  "projectFilePath": "/Users/aldrinjr/teste-bitti/Proj.Api/Proj.Api.csproj",
+  "projectFilePath": "/Users/aldrinjr/Desktop/teste-bitti-master-1/Proj.Api/Proj.Api.csproj",
   "expectedPackageFiles": [
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/microsoft.aspnet.webapi.client/5.2.6/microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/microsoft.aspnetcore/2.2.0/microsoft.aspnetcore.2.2.0.nupkg.sha512",

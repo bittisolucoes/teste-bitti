@@ -13357,11 +13357,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/aldrinjr/teste-bitti/Proj.Api/Proj.Api.csproj",
+      "projectUniqueName": "/Users/aldrinjr/Desktop/teste-bitti-master-1/Proj.Api/Proj.Api.csproj",
       "projectName": "Proj.Api",
-      "projectPath": "/Users/aldrinjr/teste-bitti/Proj.Api/Proj.Api.csproj",
+      "projectPath": "/Users/aldrinjr/Desktop/teste-bitti-master-1/Proj.Api/Proj.Api.csproj",
       "packagesPath": "/Users/aldrinjr/.nuget/packages/",
-      "outputPath": "/Users/aldrinjr/teste-bitti/Proj.Api/obj/",
+      "outputPath": "/Users/aldrinjr/Desktop/teste-bitti-master-1/Proj.Api/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
