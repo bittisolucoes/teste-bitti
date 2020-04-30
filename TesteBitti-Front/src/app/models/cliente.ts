@@ -1,10 +1,13 @@
 export class Cliente {
-    public id:number;
-    public nome: string;
+    id:number;
+    nome: string;
     cpfCnpj : string;
-    dataNascimento: string;
-    sexo = 'Masculino';
+    dataNascimento: Date;
+    sexo:string;
     inscricaoEstadual: string;
-    profissao= 'TESTER';
+    profissao:string;
     endereco = [];
+    constructor(){
+      
+    }
 }

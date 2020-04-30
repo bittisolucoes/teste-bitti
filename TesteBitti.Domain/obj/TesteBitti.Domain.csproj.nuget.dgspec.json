@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lucas Silveira\\Desktop\\teste-bitti\\TesteBitti.Domain\\TesteBitti.Domain.csproj": {}
+    "C:\\Users\\Lucas Silveira\\Desktop\\git\\teste-bitti\\TesteBitti.Domain\\TesteBitti.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lucas Silveira\\Desktop\\teste-bitti\\TesteBitti.Domain\\TesteBitti.Domain.csproj": {
+    "C:\\Users\\Lucas Silveira\\Desktop\\git\\teste-bitti\\TesteBitti.Domain\\TesteBitti.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lucas Silveira\\Desktop\\teste-bitti\\TesteBitti.Domain\\TesteBitti.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Lucas Silveira\\Desktop\\git\\teste-bitti\\TesteBitti.Domain\\TesteBitti.Domain.csproj",
         "projectName": "TesteBitti.Domain",
-        "projectPath": "C:\\Users\\Lucas Silveira\\Desktop\\teste-bitti\\TesteBitti.Domain\\TesteBitti.Domain.csproj",
+        "projectPath": "C:\\Users\\Lucas Silveira\\Desktop\\git\\teste-bitti\\TesteBitti.Domain\\TesteBitti.Domain.csproj",
         "packagesPath": "C:\\Users\\Lucas Silveira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lucas Silveira\\Desktop\\teste-bitti\\TesteBitti.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Lucas Silveira\\Desktop\\git\\teste-bitti\\TesteBitti.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

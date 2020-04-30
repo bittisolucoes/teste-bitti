@@ -28,5 +28,12 @@ export class ClienteService {
   deleteEndereco(id:number){
     return this.http.delete('http://localhost:5000/api/endereco/'+id);
   }
+  updateEndereco(endereco:Endereco){
+    return this.http.put('http://localhost:5000/api/endereco/',endereco);
+  }
+  updatecliente(cliente:Cliente){
+    return this.http.put('http://localhost:5000/api/cliente/',cliente);
+  }
+
 
 }
