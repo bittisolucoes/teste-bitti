@@ -1,0 +1,381 @@
+<div class="container mt-4">
+  <br><br><br>
+  <h5>Clientes</h5>
+  <hr class="mb-12">
+  
+  <div class="row">
+    <div class="col-lg-8 col-md-6 col-sm-12">
+      <button class="btn btn-success ml-2" data-toggle="modal" data-target="#modal">Adicionar</button>
+      <br><br>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <input class="form-control mr-sm-2" type="text">
+    </div>
+  
+  <table class="table table ml-2">
+      <tr>
+        <td ><b>Nome</b></td>
+        <td><b>Cpf/Cnpj</b></td>
+        <td><b>Data de Nascimento</b></td>
+        <td><b>Sexo</b></td>
+        <td><b>Inscrição Estadual</b></td>
+        <td><b>Profissão</b></td>
+        <td><b>Ações</b></td>
+      </tr>
+      <tr *ngFor="let dados of list">
+        <td>{{dados.nome}}</td>
+        <td>{{dados.cpfCnpj}}</td>
+        <td>{{dados.dataNascimento | date:'dd/MM/yyyy'}}</td>
+        <td>{{dados.sexo}}</td>
+        <td>{{dados.inscricaoEstadual}}</td>
+        <td>{{dados.profissao}}</td>
+        <td>
+          <a data-toggle="modal" (click)="getByIdClientes(dados.id)" data-target="#modalExcluirCliente" title="Editar Clientes"><i class="far fa-edit text-info mr-2"></i></a>
+          <a data-toggle="modal" (click)="getByIdClientes(dados.id)" data-target="#modal2" title="Excluir Registro"><i class="far fa-trash-alt text-danger"></i></a>
+        </td>
+      </tr>
+  </table>
+</div>
+</div>
+<!--CONTEUDO DA JANELA MODAL DE INSERIR-->
+<div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form #clienteForm="ngForm">
+      <div class="modal-header">
+        <h5 class="modal-title">{{title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Nome</label>
+            <input type="text" maxlength="100" class="form-control" id="inputEmail4" placeholder="Seu Nome" [(ngModel)]="clientes.nome" name="nome" required>
+          </div> 
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">CPF ou CNPJ</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Seu Nome" [(ngModel)]="clientes.cpfCnpj" name="cpfCnpj" placeholder="CPF/CNPJ" [brmasker]="{person: true}" required>
+          </div> 
+          <div *ngIf="clientes.cpfCnpj?.length >1 && 15 > clientes.cpfCnpj?.length" class="form-group col-md-4">
+            <label for="inputEmail4">Data de Nascimento</label>
+            <input type="date" class="form-control" id="inputEmail4" [(ngModel)]="clientes.dataNascimento" name="dataNascimento" required>
+          </div> 
+          <div *ngIf="clientes.cpfCnpj?.length >1 && 15 > clientes.cpfCnpj?.length" class="form-group col-md-8">
+            <label>Sexo</label>
+            <div  required class="controls">
+              <label class="radio">
+                <input type="radio" [(ngModel)]="clientes.sexo" name="sexo" value="Masculino" >
+                Masculino    
+              </label>
+              <label class="radio">
+                <input type="radio" [(ngModel)]="clientes.sexo" name="sexo" value="Feminino"checked>
+                Feminino
+              </label>
+              <label class="radio">
+                <input type="radio" [(ngModel)]="clientes.sexo" name="sexo" value="Outros">
+                Outros
+              </label>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Profissão</label>
+            <div class="controls">
+              <select class="form-control"  [(ngModel)]="clientes.profissao" name="profissao">
+                <option>DESENVOLVEDOR</option>
+                <option>TESTER</option>
+                <option>GERENTE DE PROJETOS</option>
+              </select>
+            </div>
+          </div> 
+        <div *ngIf="clientes.cpfCnpj?.length >1 && clientes.cpfCnpj?.length > 15" class="form-group col-md-6">
+            <label for="inputEmail4">Inscrição Estadual</label>
+            <input type="text" maxlength="30" class="form-control" id="inputEmail4" placeholder="Sua Inscrição Estadual" [(ngModel)]="clientes.inscricaoEstadual" name="inscricaoEstadual" required>
+          </div> 
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          <div class="form-group"></div>
+            <h5 class="modal-title">Endereço</h5>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="form-row">
+          <div *ngIf="contEndereco > 1" class="form-group col-md-4">
+            <label for="inputEmail4">Cep</label>
+            <input type="text" [brmasker]="{mask:'00000-000', len:10}" maxlength="50" class="form-control" id="inputEmail4" placeholder="insira seu Cep" [(ngModel)]="endereco2.cep" name="cep" required>
+          </div> 
+          <div *ngIf="contEndereco > 1" class="form-group col-md-8">
+            <label for="inputEmail4">Logradouro</label>
+            <input type="text"  maxlength="30" class="form-control" id="inputEmail4" placeholder="Insira seu logradouro" [(ngModel)]="endereco2.logradouro" name="logradouro" required>
+          </div>
+          <div *ngIf="contEndereco > 1"  class="form-group col-md-4">
+            <label for="inputEmail4">Número</label>
+            <input type="text"maxlength="10" class="form-control" id="inputEmail4" placeholder="insira seu número" [(ngModel)]="endereco2.numero" name="numero" required>
+          </div> 
+          <div *ngIf="contEndereco > 1"  class="form-group col-md-4">
+            <label for="inputEmail4">Bairro</label>
+            <input type="text"maxlength="100" class="form-control" id="inputEmail4" placeholder="Insira seu bairro" [(ngModel)]="endereco2.bairro" name="bairro" required>
+          </div>
+          <div *ngIf="contEndereco > 1"  class="form-group col-md-4">
+            <label for="inputEmail4">Cidade</label>
+            <input type="text" minlength="2" maxlength="50" class="form-control" id="inputEmail4" placeholder="Insira sua cidade" [(ngModel)]="endereco2.cidade" name="cidade" required>
+          </div>  
+          <div *ngIf="contEndereco > 1" class="form-group col-md-4">
+            <label>Estado</label>
+            <div class="controls">
+              <select class="form-control"  [(ngModel)]="endereco2.estado" name="estado">
+                <option value="PR" checked="checked">Paraná</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="SC">Santa Catarina</option>
+              </select>
+            </div> 
+          </div>
+          <div *ngIf="contEndereco > 1" class="form-group col-md-8">
+            <label for="inputEmail4">Complemento</label>
+            <input type="text" maxlength="200" class="form-control" id="inputEmail4" placeholder="" [(ngModel)]="endereco2.complemento" name="complemento">
+          </div>
+          <div *ngIf="contEndereco > 0" class="form-group col-md-4">
+            <label for="inputEmail4">Cep</label>
+            <input type="text" [brmasker]="{mask:'00000-000', len:10}" maxlength="50" class="form-control" id="inputEmail4" placeholder="insira seu Cep" [(ngModel)]="endereco1.cep" name="cep"  required>
+          </div> 
+          <div *ngIf="contEndereco > 0" class="form-group col-md-8">
+            <label for="inputEmail4">Logradouro</label>
+            <input type="text"  maxlength="30" class="form-control" id="inputEmail4" placeholder="Insira seu logradouro" [(ngModel)]="endereco1.logradouro" name="logradouro" required>
+          </div>
+          <div *ngIf="contEndereco > 0"  class="form-group col-md-4">
+            <label for="inputEmail4">Número</label>
+            <input type="text"maxlength="10" class="form-control" id="inputEmail4" placeholder="insira seu número" [(ngModel)]="endereco1.numero" name="numero" required>
+          </div> 
+          <div *ngIf="contEndereco > 0"  class="form-group col-md-4">
+            <label for="inputEmail4">Bairro</label>
+            <input type="text"maxlength="100" class="form-control" id="inputEmail4" placeholder="Insira seu bairro" [(ngModel)]="endereco1.bairro" name="bairro" required>
+          </div>
+          <div *ngIf="contEndereco > 0"  class="form-group col-md-4">
+            <label for="inputEmail4">Cidade</label>
+            <input type="text" minlength="2" maxlength="50" class="form-control" id="inputEmail4" placeholder="Insira sua cidade" [(ngModel)]="endereco1.cidade" name="cidade" required>
+          </div> 
+          <div *ngIf="contEndereco > 0" class="form-group col-md-4">
+            <label>Estado</label>
+            <div class="controls">
+              <select  required class="form-control"  [(ngModel)]="endereco1.estado" name="estado">
+                <option value="PR" checked="checked">Paraná</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="SC">Santa Catarina</option>
+              </select>
+            </div> 
+          </div>
+          <div *ngIf="contEndereco > 0" class="form-group col-md-8">
+            <label for="inputEmail4">Complemento</label>
+            <input type="text" maxlength="200" class="form-control" id="inputEmail4" placeholder="" [(ngModel)]="endereco1.complemento" name="complemento">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Cep</label>
+            <input type="text" [brmasker]="{mask:'00000-000', len:10}" maxlength="10" class="form-control" id="inputEmail4" placeholder="insira seu Cep" [(ngModel)]="endereco.cep" name="cep" ui-br-cep-mask>
+          </div> 
+          <div class="form-group col-md-8">
+            <label for="inputEmail4">Logradouro</label>
+            <input type="text"  maxlength="30" class="form-control" id="inputEmail4" placeholder="Insira seu logradouro" [(ngModel)]="endereco.logradouro" name="logradouro" required>
+          </div>
+          <div  class="form-group col-md-4">
+            <label for="inputEmail4">Número</label>
+            <input type="text"maxlength="10" class="form-control" id="inputEmail4" placeholder="insira seu número" [(ngModel)]="endereco.numero" name="numero" required>
+          </div> 
+          <div  class="form-group col-md-4">
+            <label for="inputEmail4">Bairro</label>
+            <input type="text"maxlength="100" class="form-control" id="inputEmail4" placeholder="Insira seu bairro" [(ngModel)]="endereco.bairro" name="bairro" required>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Cidade</label>
+            <input type="text" minlength="2" maxlength="50" class="form-control" id="inputEmail4" placeholder="Insira sua cidade" [(ngModel)]="endereco.cidade" name="cidade" required>
+          </div> 
+          <div class="form-group col-md-4">
+            <label>Estado</label>
+            <div class="controls">
+              <select  required class="form-control"  [(ngModel)]="endereco.estado" name="estado">
+                <option value="PR" checked="checked">Paraná</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="SC">Santa Catarina</option>
+              </select>
+            </div> 
+          </div>
+          <div class="form-group col-md-8">
+            <label for="inputEmail4">Complemento</label>
+            <input type="text" maxlength="200" class="form-control" id="inputEmail4" placeholder="" [(ngModel)]="endereco.complemento" name="complemento">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button [disabled]="!clienteForm.form.valid" type="button" class="btn btn-success" (click)="addCliente()">Salvar</button>
+        <button type="button" class="btn btn-outline-info" (click)="addEndereco()">Novo Endereço</button>
+        <button *ngIf="contEndereco > 0" type="button" class="btn btn-danger" (click)="deleteEnderecoList()">Deletar Endereço</button>
+        <button type="button" class="btn btn-secondary" (click)="this.contEndereco=0" data-dismiss="modal">Fechar</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+<!---MODAL CONFIRMAÇÃO DE EXCLUSÃO DO CLIENTE-->
+<div id="modal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Deseja excluir este cliente?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div *ngFor="let dados of list2"  class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Nome</label>
+              <input type="text" maxlength="100" class="form-control" id="inputEmail4" [(ngModel)]="clientes.nome" name="nome" placeholder="{{dados.nome}}" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">CPF ou CNPJ</label>
+              <input type="text" maxlength="20" class="form-control" id="inputEmail4" [(ngModel)]="clientes.cpfCnpj" name="cpfCnpj" placeholder="{{dados.cpfCnpj}}" [brmasker]="{person: true}" required>
+            </div>
+            <div *ngIf="dados.cpfCnpj?.length >1 && 15 > dados.cpfCnpj?.length" class="form-group col-md-4">
+              <label for="inputEmail4">Data de Nascimento</label>
+              <input type="text" class="form-control" id="inputEmail4" [(ngModel)]="clientes.dataNascimento" name="dataNascimento" placeholder="{{dados.dataNascimento | date:'dd/MM/yyyy'}}">
+            </div>
+            <div *ngIf="dados.cpfCnpj?.length >1 && 15 > dados.cpfCnpj?.length" class="form-group col-md-8">
+              <label for="inputEmail4">Sexo</label>
+              <div  required class="controls">
+                <label class="radio">
+                  <input type="radio" placeholder="{{dados.sexo}}" [(ngModel)]="clientes.sexo" name="sexo" value="Masculino" >
+                  Masculino    
+                </label>
+                <label class="radio">
+                  <input type="radio" placeholder="{{dados.sexo}}" [(ngModel)]="clientes.sexo" name="sexo" value="Feminino"checked>
+                  Feminino
+                </label>
+                <label class="radio">
+                  <input type="radio" placeholder="{{dados.sexo}}" [(ngModel)]="clientes.sexo" name="sexo" value="Outros">
+                  Outros
+                </label>
+            </div>
+            </div>
+            <div *ngIf="dados.cpfCnpj?.length >1 && dados.cpfCnpj?.length > 15" class="form-group col-md-6">
+              <label for="inputEmail4">Inscrição Estadual</label>
+              <input type="text" maxlength="30" class="form-control" id="inputEmail4" [(ngModel)]="clientes.inscricaoEstadual" name="nome" placeholder="{{dados.inscricaoEstadual}}">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Profissão</label>
+              <div class="controls">
+                <select class="form-control" [(ngModel)]="dados.profissao" name="profissao">
+                  <option >DESENVOLVEDOR</option>
+                  <option>TESTER</option>
+                  <option>GERENTE DE PROJETOS</option>
+                </select>
+              </div>
+            </div>
+            </div>
+          </div>
+    <div clas="div-body">
+      <div class="modal-header">
+        <h5 class="modal-title">Endereços</h5>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div *ngFor="let endereco of list2"  class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Cep</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[0].cep}}">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Logradouro</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[0].logradouro}}">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Número</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[0].numero}}">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Bairro</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[0].bairro}}">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Cidade</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[0].cidade}}">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Estado</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[0].estado}}">
+          </div>
+          <div class="form-group col-md-8">
+            <label for="inputEmail4">Complemento</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[0].complemento}}">
+          </div>
+          <div *ngIf="endereco.endereco[1].cep.length > 0" class="form-group col-md-6">
+            <label for="inputEmail4">Cep</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[1].cep}}">
+          </div>
+          <div *ngIf="endereco.endereco[1].logradouro.length > 0" class="form-group col-md-6">
+            <label for="inputEmail4">Logradouro</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[1].logradouro}}">
+          </div>
+          <div *ngIf="endereco.endereco[1].numero > 0" class="form-group col-md-4">
+            <label for="inputEmail4">Número</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[1].numero}}">
+          </div>
+          <div *ngIf="endereco.endereco[1].bairro.length > 0" class="form-group col-md-4">
+            <label for="inputEmail4">Bairro</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[1].bairro}}">
+          </div>
+          <div *ngIf="endereco.endereco[1].cidade.length > 0" class="form-group col-md-4">
+            <label for="inputEmail4">Cidade</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[1].cidade}}">
+          </div>
+          <div *ngIf="endereco.endereco[1].estado.length > 0" class="form-group col-md-4">
+            <label for="inputEmail4">Estado</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[1].estado}}">
+          </div>
+          <div *ngIf="endereco.endereco[1].estado.length > 0" class="form-group col-md-8">
+            <label for="inputEmail4">Complemento</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[1].complemento}}">
+          </div>
+          <div *ngIf="endereco.endereco[2].cep.length > 0" class="form-group col-md-6">
+            <label for="inputEmail4">Cep</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[2].cep}}">
+          </div>
+          <div *ngIf="endereco.endereco[2].logradouro.length > 0" class="form-group col-md-6">
+            <label for="inputEmail4">Logradouro</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[2].logradouro}}">
+          </div>
+          <div *ngIf="endereco.endereco[2].numero > 0" class="form-group col-md-4">
+            <label for="inputEmail4">Número</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[2].numero}}">
+          </div>
+          <div *ngIf="endereco.endereco[2].bairro.length > 0" class="form-group col-md-4">
+            <label for="inputEmail4">Bairro</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[2].bairro}}">
+          </div>
+          <div *ngIf="endereco.endereco[2].cidade.length > 0" class="form-group col-md-4">
+            <label for="inputEmail4">Cidade</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[2].cidade}}">
+          </div>
+          <div *ngIf="endereco.endereco[2].estado.length > 0" class="form-group col-md-4">
+            <label for="inputEmail4">Estado</label>
+            <div class="controls">
+              <select  required class="form-control" aria-placeholder[(ngModel)]="endereco2.estado" name="estado">
+                <option value="PR" checked="checked">Paraná</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="SC">Santa Catarina</option>
+              </select>
+            </div>
+          <div *ngIf="endereco.endereco[2].estado.length > 0" class="form-group col-md-8">
+            <label for="inputEmail4">Complemento</label>
+            <input type="text" maxlength="0" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[2].complemento}}">
+          </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-info" (click)="deleteCliente()">Alterar</button>
+      <button type="button" class="btn btn-danger" (click)="deleteCliente()">Deletar</button>
+    </div>
+    </div>  
+  </div> 
+</div>
