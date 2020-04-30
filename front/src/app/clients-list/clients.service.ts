@@ -13,6 +13,6 @@ export class ClientsService {
   constructor(private http: Http) {}
 
   clients(): Observable<Client[]> {
-    return this.http.get(`${api}/clients`).map((response) => response.json());
+    return this.http.get(`${api}/Client`).map((response) => response.json());
   }
 }

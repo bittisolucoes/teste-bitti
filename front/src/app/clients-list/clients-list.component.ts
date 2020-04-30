@@ -16,5 +16,6 @@ export class ClientsListComponent implements OnInit {
     this.clientsService
       .clients()
       .subscribe((client) => (this.clients = client));
+    console.log(this.clientsService);
   }
 }
