@@ -1,0 +1,12 @@
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Repositories\obj\Debug\netstandard2.0\TesteBitti.Repositories.csprojAssemblyReference.cache
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Repositories\obj\Debug\netstandard2.0\TesteBitti.Repositories.csproj.CoreCompileInputs.cache
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Repositories\obj\Debug\netstandard2.0\TesteBitti.Repositories.AssemblyInfoInputs.cache
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Repositories\obj\Debug\netstandard2.0\TesteBitti.Repositories.AssemblyInfo.cs
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Repositories\bin\Debug\netstandard2.0\TesteBitti.Repositories.deps.json
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Repositories\bin\Debug\netstandard2.0\TesteBitti.Repositories.dll
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Repositories\bin\Debug\netstandard2.0\TesteBitti.Repositories.pdb
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Repositories\bin\Debug\netstandard2.0\TesteBitti.Domain.dll
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Repositories\bin\Debug\netstandard2.0\TesteBitti.Domain.pdb
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Repositories\obj\Debug\netstandard2.0\TesteBitti.Repositories.csproj.CopyComplete
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Repositories\obj\Debug\netstandard2.0\TesteBitti.Repositories.dll
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Repositories\obj\Debug\netstandard2.0\TesteBitti.Repositories.pdb
