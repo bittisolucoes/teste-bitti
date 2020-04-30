@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-clients',
+  selector: 'bitti-clients',
   templateUrl: './clients.component.html',
-  styleUrls: ['./clients.component.css']
+  styleUrls: ['./clients.component.css'],
 })
 export class ClientsComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

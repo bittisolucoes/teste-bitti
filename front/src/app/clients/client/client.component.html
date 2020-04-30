@@ -1,62 +1,15 @@
-<div class="input-client">
-  <form #form="ngForm" autocomplete="off">
-    <input type="hidden" name="id" [value]="service.formData.id" />
+<a href="#">
+  <div class="place-info-box">
+    <span class="place-info-box-icon"><img [src]="client.imagePath" /></span>
 
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text bg-white">
-            <i
-              class="fas fa-user-circle"
-              [class.green-icon]="name.valid"
-              [class.red-icon]="name.invalid && name.touched"
-            ></i>
-          </div>
-        </div>
-
-        <input
-          name="name"
-          #name="ngModel"
-          [(ngModel)]="service.formData.name"
-          class="form-control"
-          placeholder="Nome"
-          required
-        />
-      </div>
+    <div class="place-info-box-content">
+      <span class="place-info-box-text">{{ client.name }}</span>
+      <span class="place-info-box-star"
+        ><i class="fa fa-star"></i>{{ client.nascimento }}}</span
+      >
+      <span class="place-info-box-detail">{{ client.cpfCnpj }}</span>
+      <span class="place-info-box-detail">{{ client.profissao }}</span>
     </div>
-
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text bg-white">
-            <i
-              class="far cpfCnpj"
-              [class.green-icon]="cpfCnpj.valid"
-              [class.red-icon]="cpfCnpj.invalid && cpfCnpj.touched"
-            ></i>
-          </div>
-        </div>
-        <input
-          name="cpfCnpj"
-          #cpfCnpj="ngModel"
-          [(ngModel)]="service.formData.cpfCnpj"
-          class="form-control"
-          placeholder="Digite o cpf/cnpj"
-          required
-          maxlength="16"
-          minlength="16"
-        />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <button class="btn btn-sucess btn-lg btn-block" type="submit">
-        Submit
-      </button>
-    </div>
-  </form>
-</div>
-<!-- Address -->
-<div class="input-address">
-  <h1>Endereço</h1>
-</div>
+    <!-- /.info-box-content -->
+  </div>
+</a>
