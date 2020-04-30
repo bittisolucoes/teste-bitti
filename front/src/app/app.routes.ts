@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
-import { ClientsComponent } from './clients/clients.component';
+import { ClientsListComponent } from './clients-list/clients-list.component';
+import { ClientInputComponent } from './clients-list/client-input/client-input.component';
 
-export const ROUTES: Routes = [
+export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'clients', component: ClientsComponent },
+  { path: 'clients', component: ClientsListComponent },
+  { path: 'newclient', component: ClientInputComponent },
 ];

@@ -1,0 +1,10 @@
+<div class="mat-elevation-28">
+  <mat-table [dataSource]="clientsService">
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+    </ng-container>
+    <mat-header-row *marHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matHeaderRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>

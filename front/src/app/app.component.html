@@ -1,17 +1,12 @@
 <div class="wrapper">
-  <!-- Início do header -->
-  <bitti-header></bitti-header>
-
-  <div class="content-wrapper">
-    <div class="container">
-      <router-outlet></router-outlet>
+  <mat-toolbar color="primary" class="navbar">
+    <div>bitti</div>
+    <div id="links">
+      <span>Inicio</span>
+      <span>Listagem</span>
+      <span>Novo</span>
     </div>
-  </div>
-
-  <footer class="main-footer">
-    <div class="container">
-      <div class="pull-right hidden-xs"><b>Version</b> 1.0.0</div>
-      <strong>Meat</strong> Angular Application
-    </div>
-  </footer>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+  <footer class="main-footer"></footer>
 </div>

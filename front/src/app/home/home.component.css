@@ -1,0 +1,12 @@
+* {
+  margin: 5px;
+}
+
+div {
+  size: 100%;
+  background-color: #3345;
+}
+
+li .nav-item {
+  position: left;
+}

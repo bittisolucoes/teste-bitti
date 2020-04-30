@@ -1,9 +1,17 @@
-import { HttpClientModule } from '@angular/common/http';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
-import { MatButtonModule } from '@angular/material/button';
+import { routes } from './app.routes';
+
+import { AppComponent } from './app.component';
+import { ClientsListComponent } from './clients-list/clients-list.component';
+import { ClientInputComponent } from './clients-list/client-input/client-input.component';
+import { HomeComponent } from './home/home.component';
+import { ClientsService } from './clients-list/clients.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -33,22 +41,16 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ClientsComponent } from './clients/clients.component';
-import { ClientComponent } from './clients/client/client.component';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
-
 @NgModule({
-  declarations: [AppComponent, ClientsComponent, ClientComponent, HomeComponent, HeaderComponent],
+  declarations: [
+    AppComponent,
+    ClientsListComponent,
+    ClientInputComponent,
+    HomeComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule,
-    MatButtonModule,
-    AppRoutingModule,
     MatInputModule,
     MatAutocompleteModule,
     MatDatepickerModule,
@@ -77,9 +79,14 @@ import { HeaderComponent } from './header/header.component';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    BrowserModule,
+    HttpModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    HttpModule,
+    RouterModule.forRoot(routes),
   ],
-
-  providers: [],
+  providers: [ClientsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
