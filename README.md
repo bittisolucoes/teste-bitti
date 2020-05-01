@@ -1,4 +1,42 @@
-Projeto criado em Asp.NET core 2.2
+Projeto criado em Asp.NET core 2.2 com Angular 9 utilizado como teste de conhecimento para a empresa Bitti Soluções.
+Api utilizando class library, Entity Framework, constituida por 2 model uma de Clientes 
+está com uma lista de Endereços.
+Front end utilizando angular 9 consumindo a api, com um componente clientes onde se é listado os clientes
+cadastrados na base de dados, as funções de Insert, Update e Delete dos clientes são feitas atravéis de modal.
+Campo de filtro pesquisa o nome, cpf e profissão tudo em só um campo de busca.
+É possivel se adicionar até 3 endereços por cliente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Utilizando as tecnologias ASP.NET Core 2.2 e Angular 9, deverá ser desenvolvido um sistema que seja capaz de manter os clientes de uma empresa. Os dados a serem armazenados são:
 
 - Nome - obrigatório com no máximo 100 caracteres;
