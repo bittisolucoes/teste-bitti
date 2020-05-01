@@ -6,11 +6,12 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 
 import { AppComponent } from './app.component';
-import { ClientsListComponent } from './clients-list/clients-list.component';
-import { ClientInputComponent } from './clients-list/client-input/client-input.component';
 import { HomeComponent } from './home/home.component';
-import { ClientsService } from './clients-list/clients.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ClientsComponent } from './clients/clients.component';
+import { ClientComponent } from './clients/client/client.component';
+import { ClientListComponent } from './clients/client-list/client-list.component';
+import { ClientsService } from './clients/clients.service';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -44,9 +45,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 @NgModule({
   declarations: [
     AppComponent,
-    ClientsListComponent,
-    ClientInputComponent,
     HomeComponent,
+    ClientsComponent,
+    ClientComponent,
+    ClientListComponent,
   ],
   imports: [
     BrowserModule,

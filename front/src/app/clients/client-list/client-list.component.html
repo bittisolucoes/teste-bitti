@@ -1,0 +1,140 @@
+<!-- <div class="search-div">
+  <button mat-raised-button><mat-icon>add</mat-icon>Create</button>
+  <mat-form-field class="search-form-field" floatLabel="never">
+    <input
+      matInput
+      [(ngModel)]="searchKey"
+      placeholder="Search"
+      autocomplete="off"
+      (keyup)="applyFilter()"
+    />
+    <button
+      mat-button
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      *ngIf="searchKey"
+      (click)="onSearchClear()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div> -->
+<div class="mat-elevation-z8">
+  <mat-table [dataSource]="listData" matSort>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>id</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.id }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Full Name</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="cpfCnpj">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >cpfCnpj</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element">{{ element.cpfCnpj }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="nascimento">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >nascimento</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element">{{ element.nascimento }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="sexo">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>sexo</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.sexo }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="inscEstadual">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >inscEstadual</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element">{{ element.inscEstadual }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="profissao">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >profissao</mat-header-cell
+      >
+
+      <mat-cell *matCellDef="let element">{{ element.profissao }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+
+      <ng-container matColumnDef="cep">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>cep</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.cep }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="logradouro">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >logradouro</mat-header-cell
+        >
+        <mat-cell *matCellDef="let element">{{ element.logradouro }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="bairro">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >bairro</mat-header-cell
+        >
+        <mat-cell *matCellDef="let element">{{ element.bairro }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="cidade">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >cidade</mat-header-cell
+        >
+        <mat-cell *matCellDef="let element">{{ element.cidade }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="estado">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >estado</mat-header-cell
+        >
+        <mat-cell *matCellDef="let element">{{ element.estado }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="complemento">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >complemento</mat-header-cell
+        >
+        <mat-cell *matCellDef="let element">{{ element.complemento }}</mat-cell>
+      </ng-container>
+
+      <mat-cell *matCellDef="let row">
+        <button mat-icon-button><mat-icon>launch</mat-icon></button>
+        <button mat-icon-button color="warn">
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="loading">
+      <mat-footer-cell *matFooterCellDef colspan="6">
+        Loading data...
+      </mat-footer-cell>
+    </ng-container>
+    <ng-container matColumnDef="noData">
+      <mat-footer-cell *matFooterCellDef colspan="6">
+        No data.
+      </mat-footer-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    <mat-footer-row
+      *matFooterRowDef="['loading']"
+      [ngClass]="{ hide: clientService != null }"
+    ></mat-footer-row>
+  </mat-table>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    [pageSize]="5"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>
