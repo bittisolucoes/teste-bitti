@@ -1,3 +1,4 @@
+Projeto criado em Asp.NET core 2.2
 Utilizando as tecnologias ASP.NET Core 2.2 e Angular 9, deverá ser desenvolvido um sistema que seja capaz de manter os clientes de uma empresa. Os dados a serem armazenados são:
 
 - Nome - obrigatório com no máximo 100 caracteres;

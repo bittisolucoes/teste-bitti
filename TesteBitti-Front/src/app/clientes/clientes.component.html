@@ -1,6 +1,6 @@
 <div class="container mt-4">
   <br><br><br>
-  <h5>Clientes</h5>
+  <h3>Clientes</h3>
   <hr class="mb-12">
   
   <div class="row">
@@ -18,7 +18,7 @@
     </form>
     </div>
   
-  <table class="table table-striped table">
+  <table class="table table-striped table col-lg-12 col-md-6 col-sm-12">
       <tr>
         <td><b>Nome</b></td>
         <td><b>Cpf/Cnpj</b></td>
@@ -119,7 +119,7 @@
           </div>
           <div *ngIf="contEndereco > 1"  class="form-group col-md-4">
             <label for="inputEmail4">Número</label>
-            <input type="text"maxlength="10" class="form-control" id="inputEmail4" placeholder="{{endereco2.numero}}" [(ngModel)]="endereco2.numero" name="numero" required>
+            <input type="number"maxlength="10" class="form-control" id="inputEmail4" placeholder="{{endereco2.numero}}" [(ngModel)]="endereco2.numero" name="numero" required>
           </div> 
           <div *ngIf="contEndereco > 1"  class="form-group col-md-4">
             <label for="inputEmail4">Bairro</label>
@@ -153,7 +153,7 @@
           </div>
           <div *ngIf="contEndereco > 0"  class="form-group col-md-4">
             <label for="inputEmail4">Número</label>
-            <input type="text"maxlength="10" class="form-control" id="inputEmail4" placeholder="{{endereco1.numero}}" [(ngModel)]="endereco1.numero" name="numero" required>
+            <input type="number"maxlength="10" class="form-control" id="inputEmail4" placeholder="{{endereco1.numero}}" [(ngModel)]="endereco1.numero" name="numero" required>
           </div> 
           <div *ngIf="contEndereco > 0"  class="form-group col-md-4">
             <label for="inputEmail4">Bairro</label>
@@ -187,7 +187,7 @@
           </div>
           <div  class="form-group col-md-4">
             <label for="inputEmail4">Número</label>
-            <input type="text"maxlength="10" class="form-control" id="inputEmail4" placeholder="{{endereco.numero}}" [(ngModel)]="endereco.numero" name="numero" required>
+            <input type="number"maxlength="10" class="form-control" id="inputEmail4" placeholder="{{endereco.numero}}" [(ngModel)]="endereco.numero" name="numero" required>
           </div> 
           <div  class="form-group col-md-4">
             <label for="inputEmail4">Bairro</label>
@@ -223,7 +223,7 @@
     </div>
   </div>
 </div>
-<!---MODAL CONFIRMAÇÃO DE EXCLUSÃO DO CLIENTE-->
+<!---MODAL CONFIRMAÇÃO DE EDIÇÃO E EXCLUSÃO DO CLIENTE-->
 <div id="modal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -243,9 +243,12 @@
               <label for="inputEmail4">CPF ou CNPJ</label>
               <input type="text" maxlength="20" class="form-control" id="inputEmail4" [(ngModel)]="dados.cpfCnpj" name="cpfCnpj" placeholder="{{dados.cpfCnpj}}" [brmasker]="{person: true}">
             </div>
-            <div *ngIf="dados.cpfCnpj?.length >1 && 15 > dados.cpfCnpj?.length" class="form-group col-md-4">
+            <div *ngIf="dados.cpfCnpj?.length >1 && 15 > dados.cpfCnpj?.length && dados.dataNascimento?.length > 8" class="form-group col-md-6">
               <label for="inputEmail4">Data de Nascimento</label>
-              <input type="date" maxlength="20" class="form-control" id="inputEmail4" [(ngModel)]="dados.dataNascimento" name="dataNascimento" placeholder="{{dados.dataNascimento}}">
+              <input type="text" (input)="this.dateNascimento = $event.target.value"
+              (change)="this.dateNascimento= $event.target.value" [brmasker]="{mask:'00/00/00', len:10}" class="form-control" id="inputEmail4" placeholder="{{dateNascimento}}">
+            </div>
+            <div *ngIf="dados.cpfCnpj?.length >1 && 15 > dados.cpfCnpj?.length" class="form-group col-md-4">
               <label for="inputEmail4">Sexo</label>
               <div  required class="controls">
                 <label class="radio">
@@ -295,7 +298,7 @@
           </div>
           <div class="form-group col-md-4">
             <label for="inputEmail4">Número</label>
-            <input type="text" maxlength="10" class="form-control" [(ngModel)]="endereco.endereco[0].numero" name="numero" id="inputEmail4" placeholder="{{endereco.endereco[0].numero}}">
+            <input type="number" maxlength="10" class="form-control" [(ngModel)]="endereco.endereco[0].numero" name="numero" id="inputEmail4" placeholder="{{endereco.endereco[0].numero}}">
           </div>
           <div class="form-group col-md-4">
             <label for="inputEmail4">Bairro</label>
@@ -308,7 +311,7 @@
           <div class="form-group col-md-4">
             <label for="inputEmail4">Estado</label>
             <div class="controls">
-              <select  required class="form-control" [(ngModel)]="endereco.endereco[0].estado" name="estado">
+              <select  required class="form-control" aria-placeholder="endereco.endereco[0].estado" [(ngModel)]="endereco.endereco[0].estado" name="estado">
                 <option value="PR" checked="checked">Paraná</option>
                 <option value="RS">Rio Grande do Sul</option>
                 <option value="SC">Santa Catarina</option>
@@ -329,7 +332,7 @@
           </div>
           <div *ngIf="endereco.endereco[1] != undefined" class="form-group col-md-4">
             <label for="inputEmail4">Número</label>
-            <input type="text" maxlength="10" class="form-control" id="inputEmail4" [(ngModel)]="endereco.endereco[1].numero" name="numero" placeholder="{{endereco.endereco[1].numero}}">
+            <input type="number" maxlength="10" class="form-control" id="inputEmail4" [(ngModel)]="endereco.endereco[1].numero" name="numero" placeholder="{{endereco.endereco[1].numero}}">
           </div>
           <div *ngIf="endereco.endereco[1] != undefined" class="form-group col-md-4">
             <label for="inputEmail4">Bairro</label>
@@ -342,7 +345,7 @@
           <div *ngIf="endereco.endereco[1] != undefined" class="form-group col-md-4">
             <label for="inputEmail4">Estado</label>
             <div class="controls">
-              <select  required class="form-control" [(ngModel)]="endereco.endereco[1].estado" name="estado">
+              <select  required class="form-control" va [(ngModel)]="endereco.endereco[1].estado" name="estado">
                 <option value="PR" checked="checked">Paraná</option>
                 <option value="RS">Rio Grande do Sul</option>
                 <option value="SC">Santa Catarina</option>
@@ -353,39 +356,39 @@
             <label for="inputEmail4">Complemento</label>
             <input type="text" maxlength="200" [(ngModel)]="endereco.endereco[1].complemento" name="complemento" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[1].complemento}}">
           </div>
-          <div *ngIf="endereco.endereco[2] != undefined" class="form-group col-md-6">
+          <div *ngIf="endereco.endereco.length >1" class="form-group col-md-6">
             <label for="inputEmail4">Cep</label>
-            <input type="text" [brmasker]="{mask:'00000-000', len:10}" [(ngModel)]="endereco.cep[2].cep" name="cep" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[2].cep}}">
+            <input type="text" [brmasker]="{mask:'00.000-000', len:10}" [(ngModel)]="endereco[2].cep" name="cep" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[2].cep}}">
           </div>
-          <div *ngIf="endereco.endereco[2] != undefined" class="form-group col-md-6">
+          <div *ngIf="endereco.endereco.length >1" class="form-group col-md-6">
             <label for="inputEmail4">Logradouro</label>
             <input type="text" maxlength="30" [(ngModel)]="endereco.endereco[2].logradouro" name="logradouro" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[2].logradouro}}">
           </div>
-          <div *ngIf="endereco.endereco[2] != undefined" class="form-group col-md-4">
+          <div *ngIf="endereco.endereco.length >1" class="form-group col-md-4">
             <label for="inputEmail4">Número</label>
-            <input type="text" maxlength="10" [(ngModel)]="endereco.endereco[2].numero" name="numero" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[2].numero}}">
+            <input type="number" maxlength="10" [(ngModel)]="endereco.endereco[2].numero" name="numero" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[2].numero}}">
           </div>
-          <div *ngIf="endereco.endereco[2] != undefined" class="form-group col-md-4">
+          <div *ngIf="endereco.endereco.length >1" class="form-group col-md-4">
             <label for="inputEmail4">Bairro</label>
             <input type="text" maxlength="100" [(ngModel)]="endereco.endereco[2].bairro" name="bairro" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[2].bairro}}">
           </div>
-          <div *ngIf="endereco.endereco[2] != undefined" class="form-group col-md-4">
+          <div *ngIf="endereco.endereco.length >1" class="form-group col-md-4">
             <label for="inputEmail4">Cidade</label>
-            <input type="text" maxlength="50" class="form-group col-md-4" [(ngModel)]="endereco.cidade[2].Cidade" name="cidade" id="inputEmail4" placeholder="{{endereco.endereco[2].cidade}}">
+            <input type="text" maxlength="50" class="form-control" [(ngModel)]="endereco.endereco2.Cidade" name="cidade" id="inputEmail4" placeholder="{{endereco.endereco[2].cidade}}">
           </div>
-          <div *ngIf="endereco.endereco[2] != undefined" class="form-group col-md-4">
+          <div *ngIf="endereco.endereco.length >1" class="form-group col-md-4">
             <label for="inputEmail4">Estado</label>
             <div class="controls">
-              <select  required class="form-control" [(ngModel)]="endereco.endereco[2].estado" name="estado">
+              <select  required class="form-control" value="endereco.endereco[2].estado" [(ngModel)]="endereco.endereco2.estado" name="estado">
                 <option value="PR" checked="checked">Paraná</option>
                 <option value="RS">Rio Grande do Sul</option>
                 <option value="SC">Santa Catarina</option>
               </select>
             </div>
           </div>
-          <div *ngIf="endereco.endereco[2] != undefined" class="form-group col-md-8">
+          <div *ngIf="endereco.endereco.length > 1" class="form-group col-md-8">
             <label for="inputEmail4">Complemento</label>
-            <input type="text" maxlength="200" [(ngModel)]="endereco.endereco[2].complemento" name="complemento" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[2].complemento}}">
+            <input type="text" maxlength="200" [(ngModel)]="endereco.endereco2.complemento" name="complemento" class="form-control" id="inputEmail4" placeholder="{{endereco.endereco[2].complemento}}">
           </div>
       </div>
     </div>

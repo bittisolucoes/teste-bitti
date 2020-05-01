@@ -7,6 +7,7 @@ import { ClientesComponent } from './clientes/clientes.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'
 import { BrMaskerModule } from 'br-mask';
+import { DatePipe } from '@angular/common'
 import { from } from 'rxjs';
 import { ClienteService } from './services/cliente.service';
 
@@ -25,7 +26,8 @@ import { ClienteService } from './services/cliente.service';
   ],
   providers: [
     HttpClient,
-    ClienteService
+    ClienteService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })
