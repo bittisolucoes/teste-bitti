@@ -1,47 +1,39 @@
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Proj.Api.Domain;
-using Proj.Api;
-using Proj.Api.Interfaces;
+using Proj.Api.Data.Repositories;
+using Proj.Api.Domain.Models;
+using Proj.Api.Domain.Repositories;
 
-namespace Proj.Repository.Repository
+namespace Proj.Api.Repositories
 {
-  public class ClientRepository : IClientRepository
-  {
-    private DataContext context;
-
-    public ClientRepository(DataContext context)
+    public class ClientRepository : BaseRepository
     {
-      this.context = context;
-    }
+        public ClientRepository(DataContext context) : base(context)
+        { }
 
-    public Client GetByID(int id)
-    {
-      return context.Client.SingleOrDefault(x => x.id == id);
-    }
+        public async Task<IEnumerable<Client>> ListAsync()
+        {
+            return await _context.Clients.ToListAsync();
+        }
+        public async Task AddAsync(Client client)
+        {
+            await _context.Clients.AddAsync(client);
+        }
 
-    public IEnumerable<Client> GetAll()
-    {
-      return context.Client.ToList().OrderBy(x => x.id);
-    }
+        public async Task<Client> FindByIdAsync(int id)
+        {
+            return await _context.Clients.FindAsync(id);
+        }
 
-    public void Create(Client client)
-    {
-      context.Entry(client).State = EntityState.Added;
-      context.SaveChanges();
-    }
+        public void Remove (Client client)
+        {
+            _context.Clients.Remove(client);
+        }
 
-    public void Update(Client client)
-    {
-      context.Entry(client).State = EntityState.Modified;
-      context.SaveChanges();
+        public void Update (Client client)
+        {
+            _context.Clients.Update(client);
+        }
     }
-
-    public void Delete(int id)
-    {
-      context.Client.Remove(this.GetByID(id));
-      context.SaveChanges();
-    }
-  }
 }

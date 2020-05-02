@@ -1,0 +1,39 @@
+<div class="example-container mat-elevation-z8">
+  <h2>Adicionar clientes</h2>
+  <div class="example-loading-shade"
+        *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" [routerLink]="['/clients']"><mat-icon>list</mat-icon></a>
+  </div>
+  <mat-card class="example-card">
+    <form [formGroup]="clientsForm" (ngSubmit)="onFormSubmit()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Name" formControlName="name"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!clientsForm.get('name').valid && clientsForm.get('name').touched">Digite seu nome</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>sexo</mat-label>
+        <mat-select formControlName="sexo">
+          <mat-option *ngFor="let sex of sexo" [value]="sex">
+            {{sex}}
+          </mat-option>
+        </mat-select>
+        <mat-error>
+          <span *ngIf="!clientsForm.get('sexo').valid && clientsForm.get('sexo').touched">Por favor, selecione seu genero</span>
+        </mat-error>
+      </mat-form-field>
+
+      <div class="button-row">
+        <button type="submit" [disabled]="!clientsForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+      </div>
+    </form>
+  </mat-card>
+</div>
