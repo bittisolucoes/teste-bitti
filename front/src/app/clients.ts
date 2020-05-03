@@ -1,12 +1,10 @@
 export class Clients {
-  id: string;
   name: string;
   cpfCnpj: string;
   nascimento: string;
   sexo: string;
   inscEstadual: string;
   profissao: string;
-  address : {
   cep: string;
   logradouro: string;
   num: string;
@@ -14,5 +12,4 @@ export class Clients {
   cidade: string;
   estado: string;
   complemento: string;
-  }
 }

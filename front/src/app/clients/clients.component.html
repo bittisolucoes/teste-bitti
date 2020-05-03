@@ -53,37 +53,37 @@
       <!-- Lista de endereços -->
       <ng-container matColumnDef="cep">
         <th mat-header-cell *matHeaderCellDef>Cep</th>
-        <td mat-cell *matCellDef="let row">{{ row.address.cep }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.cep }}</td>
       </ng-container>
 
       <ng-container matColumnDef="logradouro">
         <th mat-header-cell *matHeaderCellDef>Logradouro</th>
-        <td mat-cell *matCellDef="let row">{{ row.address.logradouro }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.logradouro }}</td>
       </ng-container>
 
       <ng-container matColumnDef="num">
         <th mat-header-cell *matHeaderCellDef>Numero</th>
-        <td mat-cell *matCellDef="let row">{{ row.address.num }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.num }}</td>
       </ng-container>
 
       <ng-container matColumnDef="bairro">
         <th mat-header-cell *matHeaderCellDef>Bairro</th>
-        <td mat-cell *matCellDef="let row">{{ row.address.bairro }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.bairro }}</td>
       </ng-container>
 
       <ng-container matColumnDef="cidade">
         <th mat-header-cell *matHeaderCellDef>Cidade</th>
-        <td mat-cell *matCellDef="let row">{{ row.address.cidade }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.cidade }}</td>
       </ng-container>
 
       <ng-container matColumnDef="estado">
         <th mat-header-cell *matHeaderCellDef>Estado</th>
-        <td mat-cell *matCellDef="let row">{{ row.address.estado }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.estado }}</td>
       </ng-container>
 
       <ng-container matColumnDef="complemento">
         <th mat-header-cell *matHeaderCellDef>Complemento</th>
-        <td mat-cell *matCellDef="let row">{{ row.address.complemento }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.complemento }}</td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

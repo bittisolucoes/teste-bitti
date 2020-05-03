@@ -25,7 +25,7 @@ export class AddClientsComponent implements OnInit {
   nascimento = '';
   sexo = ['Masculino', 'Feminino'];
   inscEstadual = '';
-  profissao = ['Desenvolvedor', 'CEO', 'Tester'];
+  profissao = ['Desenvolvedor', 'Tester', 'Gerente de Projetos'];
   cep = '';
   logradouro = '';
   num = '';
@@ -40,18 +40,19 @@ export class AddClientsComponent implements OnInit {
 
   ngOnInit(): void {
     this.clientsForm = this.formBuilder.group({
-      name: [null, Validators.required],
-      cpfCnpj: [null, Validators.required],
-      nascimento: [null, Validators.required],
-      sexo: [null, Validators.required],
-      inscEstadual: [null, Validators.required],
-      profissao: [null, Validators.required],
-      cep: [null, Validators.required],
-      logradouro: [null, Validators.required],
-      bairro: [null, Validators.required],
-      cidade: [null, Validators.required],
-      estado: [null, Validators.required],
-      complemento: [null, Validators.required],
+       name:  ['', [Validators.required, Validators.maxLength(100)]],
+       cpfCnpj: ['',[Validators.required, Validators.minLength(11), Validators.maxLength(14)]],
+       nascimento:  ['',[Validators.required]],
+       sexo:  [Validators.required],
+       inscEstadual: ['', [Validators.required]],
+       profissao: ['', [Validators.required]],
+       cep: ['', [Validators.required]],
+       logradouro: ['', [Validators.required, Validators.maxLength(100)]],
+       num: ['', [Validators.required, Validators.maxLength(10)]],
+       bairro: ['', [Validators.required, Validators.maxLength(100)]],
+       cidade: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
+       estado: ['', [Validators.required]], //fazer o esquema da máscara RS = Rio grande do sul...
+       complemento: ['', [Validators.required, Validators.maxLength(200)]],
     });
   }
 

@@ -19,6 +19,7 @@ export class ClientsDetailsComponent implements OnInit {
     profissao: '',
     cep: '',
     logradouro: '',
+    num: '',
     bairro: '',
     cidade: '',
     estado: '',
