@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Proj.Api.Domain;
@@ -10,6 +11,7 @@ namespace Proj.Api.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
+
     public class ClientsController : ControllerBase
     {
         private readonly DataContext _context;
@@ -20,22 +22,21 @@ namespace Proj.Api.Controllers
         }
         //Get tabela Clients junto com a de Address (one to one)
         
-        [HttpGet]
+        [HttpGet] 
         public async Task<IEnumerable<Client>> ListAsync()
         {
-            return await _context.Clients.Include(p => p.Address)
-                                          .ToListAsync();
+            return await _context.Clients.ToListAsync();
         }
         // PUT: api/Client/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutClient(int id, Client client)
+        [HttpPut("{id}")]   
+        public async Task<IActionResult> PutClient(int id, Client client) //, Address address
         {
             if(id!=client.id)
             {
                 return BadRequest();
             }
             _context.Entry(client).State = EntityState.Modified;
-
+            //_context.Entry(address).State = EntityState.Modified;
             try
             {
                 await _context.SaveChangesAsync();
@@ -71,6 +72,7 @@ namespace Proj.Api.Controllers
 
         // POST: api/Client
         [HttpPost]
+
         public async Task<ActionResult<Client>> PostClient(Client client)
         {
             _context.Clients.Add(client);
@@ -81,6 +83,7 @@ namespace Proj.Api.Controllers
 
         // DELETE: api/Client/5
         [HttpDelete("{id}")]
+
         public async Task<ActionResult<Client>> DeleteClient(int id)
         {
             var client = await _context.Clients.FindAsync(id);

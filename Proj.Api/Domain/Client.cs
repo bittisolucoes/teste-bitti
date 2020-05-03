@@ -11,6 +11,12 @@ namespace Proj.Api.Domain
     public string sexo { get; set; }
     public string inscEstadual { get; set; }
     public string profissao { get; set; }
-    public Address Address {get; set; }
+    public string cep { get; set; }
+    public string logradouro { get; set; }
+    public int num { get; set; }
+    public string bairro { get; set; }
+    public string cidade { get; set; }
+    public string estado { get; set; }
+    public string complemento { get; set; }
     }
 }
