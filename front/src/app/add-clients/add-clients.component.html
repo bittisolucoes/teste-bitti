@@ -31,6 +31,15 @@
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
+        <mat-label>Nascimento</mat-label>
+        <input matInput placeholder="Nascimento" formControlName="nascimento"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!clientsForm.get('nascimento').valid && clientsForm.get('nascimento').touched">Digite seu CPF ou CNPJ</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
         <mat-label>sexo</mat-label>
         <mat-select formControlName="sexo">
           <mat-option *ngFor="let sex of sexo" [value]="sex">
@@ -138,7 +147,7 @@
       </mat-form-field>
 
       <div class="button-row">
-        <button type="submit" [enable]="!clientsForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+        <button type="submit" [disabled]="!clientsForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
       </div>
     </form>
   </mat-card>

@@ -20,6 +20,7 @@ export class AddClientsComponent implements OnInit {
 
 
   clientsForm: FormGroup;
+  id: '';
   name = '';
   cpfCnpj = '';
   nascimento = '';

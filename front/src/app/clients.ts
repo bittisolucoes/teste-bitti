@@ -1,4 +1,5 @@
 export class Clients {
+  id: string;
   name: string;
   cpfCnpj: string;
   nascimento: string;
