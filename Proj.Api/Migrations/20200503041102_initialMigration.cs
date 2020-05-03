@@ -3,7 +3,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Proj.Api.Migrations
 {
-    public partial class initialMigration4 : Migration
+    public partial class initialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -29,7 +29,7 @@ namespace Proj.Api.Migrations
                 name: "Addresses",
                 columns: table => new
                 {
-                    id = table.Column<int>(nullable: false)
+                    addressId = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     cep = table.Column<string>(nullable: true),
                     logradouro = table.Column<string>(nullable: true),
@@ -42,7 +42,7 @@ namespace Proj.Api.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Addresses", x => x.id);
+                    table.PrimaryKey("PK_Addresses", x => x.addressId);
                     table.ForeignKey(
                         name: "FK_Addresses_Clients_clientId",
                         column: x => x.clientId,
@@ -54,7 +54,8 @@ namespace Proj.Api.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Addresses_clientId",
                 table: "Addresses",
-                column: "clientId");
+                column: "clientId",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

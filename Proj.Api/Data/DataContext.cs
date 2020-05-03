@@ -1,18 +1,20 @@
 using Microsoft.EntityFrameworkCore;
-using Proj.Api.Domain.Models;
+using Proj.Api.Domain;
 
 namespace Proj.Api {
   public class DataContext : DbContext {
     public DataContext (DbContextOptions<DataContext> options) : base (options) { }
     public DbSet<Client> Clients { get; set; }
-    public DbSet<Address> Addresses {get; set; }
-
+    public DbSet<Address> Addresses { get; set; }
+  
     protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Client>()
-                .HasMany<Address>(c => c.addresses)
-                  .WithOne(a => a.client)
-                .OnDelete(DeleteBehavior.Cascade);
+    {
+    modelBuilder.Entity<Client>()
+        .HasOne(c => c.Address)
+        .WithOne(a => a.Client)
+        .HasForeignKey<Address>(a => a.clientId);
     }
+  
   }
+
 }

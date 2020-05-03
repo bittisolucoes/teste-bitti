@@ -9,8 +9,8 @@ using Proj.Api;
 namespace Proj.Api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200502193805_initialMigration4")]
-    partial class initialMigration4
+    [Migration("20200503041102_initialMigration")]
+    partial class initialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,9 +20,9 @@ namespace Proj.Api.Migrations
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            modelBuilder.Entity("Proj.Api.Domain.Models.Address", b =>
+            modelBuilder.Entity("Proj.Api.Domain.Address", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("addressId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("bairro");
@@ -41,14 +41,15 @@ namespace Proj.Api.Migrations
 
                     b.Property<int>("num");
 
-                    b.HasKey("id");
+                    b.HasKey("addressId");
 
-                    b.HasIndex("clientId");
+                    b.HasIndex("clientId")
+                        .IsUnique();
 
                     b.ToTable("Addresses");
                 });
 
-            modelBuilder.Entity("Proj.Api.Domain.Models.Client", b =>
+            modelBuilder.Entity("Proj.Api.Domain.Client", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd();
@@ -70,11 +71,11 @@ namespace Proj.Api.Migrations
                     b.ToTable("Clients");
                 });
 
-            modelBuilder.Entity("Proj.Api.Domain.Models.Address", b =>
+            modelBuilder.Entity("Proj.Api.Domain.Address", b =>
                 {
-                    b.HasOne("Proj.Api.Domain.Models.Client", "client")
-                        .WithMany("addresses")
-                        .HasForeignKey("clientId")
+                    b.HasOne("Proj.Api.Domain.Client", "Client")
+                        .WithOne("Address")
+                        .HasForeignKey("Proj.Api.Domain.Address", "clientId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
