@@ -8,7 +8,21 @@ import { Clients } from '../clients';
   styleUrls: ['./clients.component.scss'],
 })
 export class ClientsComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'nascimento', 'profissao'];
+  displayedColumns: string[] = [
+    'name',
+    'cpfCnpj',
+    'nascimento',
+    'sexo',
+    'inscEstadual',
+    'profissao',
+    'cep',
+    'logradouro',
+    'num',
+    'bairro',
+    'cidade',
+    'estado',
+    'complemento'
+  ];
   data: Clients[] = [];
   isLoadingResults = true;
 

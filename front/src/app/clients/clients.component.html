@@ -22,18 +22,68 @@
       matSortDirection="asc"
     >
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>name</th>
+        <th mat-header-cell *matHeaderCellDef>Name</th>
         <td mat-cell *matCellDef="let row">{{ row.name }}</td>
       </ng-container>
 
+      <ng-container matColumnDef="cpfCnpj">
+        <th mat-header-cell *matHeaderCellDef>Cpf Cnpj</th>
+        <td mat-cell *matCellDef="let row">{{ row.cpfCnpj }}</td>
+      </ng-container>
+
       <ng-container matColumnDef="nascimento">
-        <th mat-header-cell *matHeaderCellDef>nascimento</th>
+        <th mat-header-cell *matHeaderCellDef>Data Nascimento</th>
         <td mat-cell *matCellDef="let row">{{ row.nascimento }}</td>
       </ng-container>
 
+      <ng-container matColumnDef="sexo">
+        <th mat-header-cell *matHeaderCellDef>Sexo</th>
+        <td mat-cell *matCellDef="let row">{{ row.sexo }}</td>
+      </ng-container>
+      <!-- Mostrar inscEstadual somente se passar de 11 caracteres em cpfCnpj -->
+      <ng-container matColumnDef="inscEstadual">
+        <th mat-header-cell *matHeaderCellDef>inscEstadual</th>
+        <td mat-cell *matCellDef="let row">{{ row.inscEstadual }}</td>
+      </ng-container>
+
       <ng-container matColumnDef="profissao">
-        <th mat-header-cell *matHeaderCellDef>profissao</th>
+        <th mat-header-cell *matHeaderCellDef>Profissao</th>
         <td mat-cell *matCellDef="let row">{{ row.profissao }}</td>
+      </ng-container>
+      <!-- Lista de endereços -->
+      <ng-container matColumnDef="cep">
+        <th mat-header-cell *matHeaderCellDef>Cep</th>
+        <td mat-cell *matCellDef="let row">{{ row.address.cep }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="logradouro">
+        <th mat-header-cell *matHeaderCellDef>Logradouro</th>
+        <td mat-cell *matCellDef="let row">{{ row.address.logradouro }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="num">
+        <th mat-header-cell *matHeaderCellDef>Numero</th>
+        <td mat-cell *matCellDef="let row">{{ row.address.num }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="bairro">
+        <th mat-header-cell *matHeaderCellDef>Bairro</th>
+        <td mat-cell *matCellDef="let row">{{ row.address.bairro }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="cidade">
+        <th mat-header-cell *matHeaderCellDef>Cidade</th>
+        <td mat-cell *matCellDef="let row">{{ row.address.cidade }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef>Estado</th>
+        <td mat-cell *matCellDef="let row">{{ row.address.estado }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="complemento">
+        <th mat-header-cell *matHeaderCellDef>Complemento</th>
+        <td mat-cell *matCellDef="let row">{{ row.address.complemento }}</td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
