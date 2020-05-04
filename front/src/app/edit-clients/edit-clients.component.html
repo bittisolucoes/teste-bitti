@@ -13,7 +13,7 @@
     <form [formGroup]="clientsForm" (ngSubmit)="onFormSubmit()">
 
       <mat-form-field class="example-full-width">
-        <mat-label>Name</mat-label>
+        <mat-label>Nome</mat-label>
         <input matInput placeholder="Name" formControlName="name"
                 [errorStateMatcher]="matcher">
         <mat-error>
@@ -22,7 +22,7 @@
       </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <mat-label>cpfCnpj</mat-label>
+          <mat-label>Cpf Cnpj</mat-label>
           <input matInput placeholder="cpfCnpj" formControlName="cpfCnpj"
                   [errorStateMatcher]="matcher">
           <mat-error>
@@ -32,7 +32,7 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Nascimento</mat-label>
-          <input matInput type="number" placeholder="Nascimento" formControlName="nascimento"
+          <input type="date" matInput placeholder="DD/MM/YYYY" formControlName="nascimento"
                   [errorStateMatcher]="matcher">
           <mat-error>
             <span *ngIf="!clientsForm.get('nascimento').valid && clientsForm.get('nascimento').touched">Digite sua data de nascimento</span>
@@ -41,7 +41,7 @@
 
 
       <mat-form-field class="example-full-width">
-        <mat-label>sexo</mat-label>
+        <mat-label>Sexo</mat-label>
         <mat-select formControlName="sexo">
           <mat-option *ngFor="let sexo of sexo" [value]="sexo">
             {{sexo}}
@@ -53,7 +53,7 @@
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <mat-label>inscEstadual</mat-label>
+        <mat-label>Inscrição Estadual</mat-label>
         <input matInput placeholder="inscEstadual" formControlName="inscEstadual"
                 [errorStateMatcher]="matcher">
         <mat-error>
@@ -62,7 +62,7 @@
       </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <mat-label>profissao</mat-label>
+      <mat-label>Profissão</mat-label>
       <mat-select formControlName="profissao">
         <mat-option *ngFor="let profissao of profissao" [value]="profissao">
           {{profissao}}
@@ -74,7 +74,7 @@
     </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <mat-label>cep</mat-label>
+        <mat-label>CEP</mat-label>
         <input matInput placeholder="cep" formControlName="cep"
                 [errorStateMatcher]="matcher">
         <mat-error>
@@ -83,7 +83,7 @@
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <mat-label>logradouro</mat-label>
+        <mat-label>Logradouro</mat-label>
         <input matInput placeholder="logradouro" formControlName="logradouro"
                 [errorStateMatcher]="matcher">
         <mat-error>
@@ -92,16 +92,16 @@
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <mat-label>num</mat-label>
+        <mat-label>Número</mat-label>
         <input matInput placeholder="num" formControlName="num"
                 [errorStateMatcher]="matcher">
         <mat-error>
-          <span *ngIf="!clientsForm.get('num').valid && clientsForm.get('num').touched">Digite seu num</span>
+          <span *ngIf="!clientsForm.get('num').valid && clientsForm.get('num').touched">Digite o número de sua residencia</span>
         </mat-error>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <mat-label>bairro</mat-label>
+        <mat-label>Bairro</mat-label>
         <input matInput placeholder="bairro" formControlName="bairro"
                 [errorStateMatcher]="matcher">
         <mat-error>
@@ -110,7 +110,7 @@
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <mat-label>cidade</mat-label>
+        <mat-label>Cidade</mat-label>
         <input matInput placeholder="cidade" formControlName="cidade"
                 [errorStateMatcher]="matcher">
         <mat-error>
@@ -119,19 +119,19 @@
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <mat-label>estado</mat-label>
+        <mat-label>Estado</mat-label>
         <mat-select formControlName="estado">
           <mat-option *ngFor="let estado of estado" [value]="estado">
             {{estado}}
           </mat-option>
         </mat-select>
         <mat-error>
-          <span *ngIf="!clientsForm.get('estado').valid && clientsForm.get('estado').touched">Please select Status</span>
+          <span *ngIf="!clientsForm.get('estado').valid && clientsForm.get('estado').touched">Selecione seu estado</span>
         </mat-error>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <mat-label>complemento</mat-label>
+        <mat-label>Complemento</mat-label>
         <input matInput placeholder="complemento" formControlName="complemento"
                 [errorStateMatcher]="matcher">
         <mat-error>

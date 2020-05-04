@@ -1,7 +1,20 @@
 /* Structure */
 .example-container {
-  position: relative;
-  padding: 5px;
+  display: inline;
+  flex-direction: line;
+  min-width: 300px;
+  margin:10px;
+
+  dt {
+    float: left;
+    clear: left;
+    margin-right: 5px;
+    font-weight: bold;
+  }
+
+  dd {
+    margin-left: 0px;
+  }
 }
 
 .example-loading-shade {
@@ -13,8 +26,8 @@
   background: rgba(0, 0, 0, 0.15);
   z-index: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
 }
 
 .mat-flat-button {
