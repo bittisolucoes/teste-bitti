@@ -30,7 +30,7 @@
       <!--  [disabled]="!clientsForm.get('cpfCnpj > 11')" -->
       <mat-form-field class="example-full-width">
         <mat-label>Data Nascimento</mat-label>
-        <input  type="date" matInput placeholder="DD/MM/YYYY" formControlName="nascimento"
+        <input   type="date" matInput placeholder="DD/MM/YYYY" formControlName="nascimento"
                 [errorStateMatcher]="matcher">
         <mat-error>
           <span *ngIf="!clientsForm.get('nascimento').valid && clientsForm.get('nascimento').touched">Digite sua data de nascimento</span>
