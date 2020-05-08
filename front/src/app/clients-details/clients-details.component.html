@@ -1,0 +1,56 @@
+<div class="example-container mat-elevation-z8">
+  <h2>Detalhes dos clientes cadastrados</h2>
+  <div class="example-loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" [routerLink]="['/clients']"
+      ><mat-icon>list</mat-icon></a
+    >
+  </div>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title
+        ><h2>{{ clients.name }}</h2></mat-card-title
+      >
+      <mat-card-subtitle>{{ clients.cpfCnpj }} Cpf / Cnpj</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <dl>
+        <dt>Nascimento:</dt>
+        <dd>{{ clients.nascimento }}</dd>
+        <dt>Sexo:</dt>
+        <dd>{{ clients.sexo }}</dd>
+        <dt>Inscrição Estadual:</dt>
+        <dd>{{ clients.inscEstadual }}</dd>
+        <dt>Profissão:</dt>
+        <dd>{{ clients.profissao }}</dd>
+        <dt>Cep:</dt>
+        <dd>{{ clients.cep }}</dd>
+        <dt>Logradouro:</dt>
+        <dd>{{ clients.logradouro }}</dd>
+        <dt>Número:</dt>
+        <dd>{{ clients.num }}</dd>
+        <dt>Bairro:</dt>
+        <dd>{{  clients.bairro }}</dd>
+        <dt>Cidade:</dt>
+        <dd>{{ clients.cidade }}</dd>
+        <dt>Complemento:</dt>
+        <dd>{{ clients.complemento }}</dd>
+        <dt>Estado:</dt>
+        <dd>{{ clients.estado }}</dd>
+      </dl>
+    </mat-card-content>
+    <mat-card-actions>
+      <a
+        mat-flat-button
+        color="primary"
+        [routerLink]="['/edit-clients', clients.id]"
+        ><mat-icon>edit</mat-icon> Clientes</a
+      >
+      <a mat-flat-button color="warn" (click)="deleteClients(clients.id)"
+        ><mat-icon>delete</mat-icon> Clients</a
+      >
+    </mat-card-actions>
+  </mat-card>
+</div>

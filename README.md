@@ -1,34 +1,28 @@
-Utilizando as tecnologias ASP.NET Core 2.2 e Angular 9, deverá ser desenvolvido um sistema que seja capaz de manter os clientes de uma empresa. Os dados a serem armazenados são:
 
-- Nome - obrigatório com no máximo 100 caracteres;
-- CPF/CNPJ - obrigatório e com máscara (a troca da máscara entre cpf e cnpj deverá ser dinâmica, baseando-se no número de caracteres digitados);
-- Data de nascimento - obrigatório e deverá aparecer apenas caso o cadastro seja de uma pessoa física
-- Sexo - Radio buttton que deverá aparecer apenas caso o cadastro seja de uma pessoa física e deverá ter as seguintes opções:
-     - masculino
-     - feminino
-     - outro
-- Inscrição estadual - deverá aparecer apenas caso o cadastro seja de uma pessoa jurídica. Máximo de 30 caracteres;
-- Profissão - obrigatório e deverá ser um dropdown de escolha única e com as seguintes opções: 
-    - DESENVOLVEDOR
-    - TESTER
-    - GERENTE DE PROJETOS.
-- Lista de endereços com os seguintes campos:
-   - CEP: Obrigatório e com máscara;
-   - Logradouro: Obrigatório com máximo de 100 caracteres;
-   - Número: Obrigatório com máximo de 10 caracteres;
-   - Bairro: Obrigatório com máximo de 100 caracteres;
-   - Cidade: Obrigatório com no mínimo 2 caracteres e no máximo de 50;
-   - Estado: campo dropdown obrigatório e com as seguintes opções: RS, SC E PR. Detalhe: na visualização das opções, deverá ter o nome completo de cada estado. A sigla será usada apenas para salvar no banco;
-   - Complemento: Máximo de 200 caracteres.
- - A lista de endereços deverá ser mantida na mesma tela dos outros campos do cliente.
- - Incluir filtros na listagem dos clientes;
- - O uso de bibliotecas de terceiros é permitida, mas apenas em casos onde realmente seja necessário. Atente-se a isso.
- - Caso a documentação escrita aqui não responda as dúvidas em todos os casos, é possível que você tome decisões optando por um ou por outro lado. Apenas é importante saber defender o seu ponto de vista e conhecer outros caminhos que poderiam levar ao mesmo resultado (por que você escolheu essa forma para fazer isso e não de outra?)
- - Um detalhe importante: é interessante que todos os requisitos sejam atendidos, mas deixar de fazer um item ou outro não é o fim do mundo. O objetivo é que dentre esse universo de funcionalidades que foram solicitadas, você consiga mostrar quais você sabe fazer, e além disso, o mais importante: COMO você resolve o problema.
- 
- - Para realizar o teste, crie uma branch a partir da master e após, crie outras duas pastas: (não esqueçam do gitignore, pls)
-   - API: deverá ser criado o projeto aspnet core 2.2
-   - Front: deverá ser criado o projeto angular 9
- - Após concluido, faça o seu PR. Caso queira explicar alguma coisa sobre o seu código, esse momento é o ideal. Comente o quanto quiser.
- 
- - Sucesso!
+
+Projeto criado com as tecnologias ASP.NET Core 2.2 e Angular 9
+
+Requisito : deverá ser desenvolvido um sistema que seja capaz de manter os clientes de uma empresa.
+
+-------
+Projeto criado com Angular 9
+
+Tentei seguir ao máximo as implementações do projeto, mas não consegui criar a troca dinâmica para o formulário de adicionar clientes
+
+Faltou a troca dinâmica entre Cpf Cnpj e suas respectivas informações  :( 
+(Data de nascimento, Sexo e inscrição estadual)
+
+O restante do projeto está de acordo com a descrição
+
+Foi utilizado o Angular Material para implementar o visual da aplicação
+
+Os formulários mostram os erros conforme o usuário está digitando 
+
+A estrutura de rotas foi separada por pastas para facilitar a implementação (add-clients, clients-list, clients-details, re)
+
+Api criada em .Net Core 2.2, e com todas as rodas get, put, post, delete testadas pelo Insominia.
+
+Tive que implementar o Cors dentro da API do .Net, sei que isso não deve ser feito em um projeto real, foi apenas para acessar as rotas através do angular.
+
+Abaixo está o link do docker com o Banco de dados Postgres :  https://hub.docker.com/r/aldrinjunior/postgres
+
