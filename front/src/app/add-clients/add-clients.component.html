@@ -1,0 +1,149 @@
+<div class="example-container mat-elevation-z8">
+  <h2>Adicionar clientes</h2>
+  <div class="example-loading-shade"
+        *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" [routerLink]="['/clients']"><mat-icon>list</mat-icon></a>
+  </div>
+  <mat-card class="example-card">
+    <form [formGroup]="clientsForm" (ngSubmit)="onFormSubmit()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Name" formControlName="name"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!clientsForm.get('name').valid && clientsForm.get('name').touched">Digite seu nome</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Cpf Cnpj</mat-label>
+        <input matInput placeholder="Cpf Cnpj" formControlName="cpfCnpj"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!clientsForm.get('cpfCnpj').valid && clientsForm.get('cpfCnpj').touched">Digite seu CPF ou CNPJ</span>
+        </mat-error>
+      </mat-form-field>
+      <!--  [disabled]="!clientsForm.get('cpfCnpj > 11')" -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Data Nascimento</mat-label>
+        <input   type="date" matInput placeholder="DD/MM/YYYY" formControlName="nascimento"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!clientsForm.get('nascimento').valid && clientsForm.get('nascimento').touched">Digite sua data de nascimento</span>
+        </mat-error>
+      </mat-form-field>
+      <!--  [disabled]="!clientsForm.get('cpfCnpj > 11')" -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Sexo</mat-label>
+        <mat-select formControlName="sexo">
+          <mat-option *ngFor="let sex of sexo" [value]="sex">
+            {{sex}}
+          </mat-option>
+        </mat-select>
+        <mat-error>
+          <span *ngIf="!clientsForm.get('sexo').valid && clientsForm.get('sexo').touched">Por favor, selecione seu genero</span>
+        </mat-error>
+      </mat-form-field>
+      <!--  [disabled]="!clientsForm.get('cpfCnpj === 11')" -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Inscrição Estadual</mat-label>
+        <input matInput placeholder="inscEstadual" formControlName="inscEstadual"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!clientsForm.get('inscEstadual').valid && clientsForm.get('inscEstadual').touched">Digite seu cep</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Profissao</mat-label>
+        <mat-select formControlName="profissao">
+          <mat-option *ngFor="let profissao of profissao" [value]="profissao">
+            {{profissao}}
+          </mat-option>
+        </mat-select>
+        <mat-error>
+          <span *ngIf="!clientsForm.get('profissao').valid && clientsForm.get('profissao').touched">Selecione sua profissao</span>
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width">
+        <mat-label>CEP</mat-label>
+        <input matInput placeholder="cep" formControlName="cep"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!clientsForm.get('cep').valid && clientsForm.get('cep').touched">Digite seu cep</span>
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Logradouro</mat-label>
+        <input matInput placeholder="logradouro" formControlName="logradouro"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!clientsForm.get('logradouro').valid && clientsForm.get('logradouro').touched">Digite seu logradouro</span>
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Número</mat-label>
+        <input matInput placeholder="num" formControlName="num"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!clientsForm.get('num').valid && clientsForm.get('num').touched">Digite o número de sua residencial</span>
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Bairro</mat-label>
+        <input matInput placeholder="bairro" formControlName="bairro"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!clientsForm.get('bairro').valid && clientsForm.get('bairro').touched">Digite seu Bairro</span>
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Cidade</mat-label>
+        <input matInput placeholder="cidade" formControlName="cidade"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!clientsForm.get('cidade').valid && clientsForm.get('cidade').touched">Digite sua cidade</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="estado">
+          <mat-option *ngFor="let estado of estado" [value]="estado">
+            {{estado}}
+          </mat-option>
+        </mat-select>
+        <mat-error>
+          <span *ngIf="!clientsForm.get('estado').valid && clientsForm.get('estado').touched">Por favor, selecione seu estado</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Complemento</mat-label>
+        <input matInput placeholder="complemento" formControlName="complemento"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!clientsForm.get('complemento').valid && clientsForm.get('complemento').touched">Digite seu complemento</span>
+        </mat-error>
+      </mat-form-field>
+
+      <div class="button-row">
+        <button type="submit" [disabled]="!clientsForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+      </div>
+    </form>
+  </mat-card>
+</div>
