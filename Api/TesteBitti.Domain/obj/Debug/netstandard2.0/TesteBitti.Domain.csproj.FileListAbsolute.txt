@@ -1,0 +1,36 @@
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Domain\bin\Debug\netstandard2.0\TesteBitti.Domain.deps.json
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Domain\bin\Debug\netstandard2.0\TesteBitti.Domain.dll
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Domain\bin\Debug\netstandard2.0\TesteBitti.Domain.pdb
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.csprojAssemblyReference.cache
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.AssemblyInfoInputs.cache
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.AssemblyInfo.cs
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.dll
+C:\Users\Lucas Silveira\Desktop\teste-bitti\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.pdb
+C:\Users\Lucas Silveira\Desktop\git\teste-bitti\TesteBitti.Domain\bin\Debug\netstandard2.0\TesteBitti.Domain.deps.json
+C:\Users\Lucas Silveira\Desktop\git\teste-bitti\TesteBitti.Domain\bin\Debug\netstandard2.0\TesteBitti.Domain.dll
+C:\Users\Lucas Silveira\Desktop\git\teste-bitti\TesteBitti.Domain\bin\Debug\netstandard2.0\TesteBitti.Domain.pdb
+C:\Users\Lucas Silveira\Desktop\git\teste-bitti\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.csprojAssemblyReference.cache
+C:\Users\Lucas Silveira\Desktop\git\teste-bitti\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Lucas Silveira\Desktop\git\teste-bitti\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.AssemblyInfoInputs.cache
+C:\Users\Lucas Silveira\Desktop\git\teste-bitti\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.AssemblyInfo.cs
+C:\Users\Lucas Silveira\Desktop\git\teste-bitti\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.dll
+C:\Users\Lucas Silveira\Desktop\git\teste-bitti\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.pdb
+C:\Users\Lucas Silveira\Documents\teste-bitti\teste-bitti\Api\TesteBitti.Domain\bin\Debug\netstandard2.0\TesteBitti.Domain.deps.json
+C:\Users\Lucas Silveira\Documents\teste-bitti\teste-bitti\Api\TesteBitti.Domain\bin\Debug\netstandard2.0\TesteBitti.Domain.dll
+C:\Users\Lucas Silveira\Documents\teste-bitti\teste-bitti\Api\TesteBitti.Domain\bin\Debug\netstandard2.0\TesteBitti.Domain.pdb
+C:\Users\Lucas Silveira\Documents\teste-bitti\teste-bitti\Api\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.csprojAssemblyReference.cache
+C:\Users\Lucas Silveira\Documents\teste-bitti\teste-bitti\Api\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Lucas Silveira\Documents\teste-bitti\teste-bitti\Api\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.AssemblyInfoInputs.cache
+C:\Users\Lucas Silveira\Documents\teste-bitti\teste-bitti\Api\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.AssemblyInfo.cs
+C:\Users\Lucas Silveira\Documents\teste-bitti\teste-bitti\Api\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.dll
+C:\Users\Lucas Silveira\Documents\teste-bitti\teste-bitti\Api\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.pdb
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Domain\bin\Debug\netstandard2.0\TesteBitti.Domain.deps.json
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Domain\bin\Debug\netstandard2.0\TesteBitti.Domain.dll
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Domain\bin\Debug\netstandard2.0\TesteBitti.Domain.pdb
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.csprojAssemblyReference.cache
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.AssemblyInfoInputs.cache
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.AssemblyInfo.cs
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.dll
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Domain\obj\Debug\netstandard2.0\TesteBitti.Domain.pdb
