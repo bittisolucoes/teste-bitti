@@ -21,7 +21,6 @@ namespace TesteBitti.Repositories
             foreach(var item in obj.endereco) {
                 context.Entry(item).State = EntityState.Added;
             }
-            //context.Cliente.Add(obj);
             context.SaveChanges();
         }
 
@@ -54,6 +53,9 @@ namespace TesteBitti.Repositories
         public void Update(Cliente obj)
         {
             context.Entry(obj).State = EntityState.Modified;
+             foreach(var item in obj.endereco) {
+                context.Entry(item).State = EntityState.Modified;
+            }
             context.SaveChanges();
         }
     }

@@ -12977,11 +12977,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lucas Silveira\\Documents\\teste-bitti\\teste-bitti\\Api\\TesteBitti.Api\\TesteBitti.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Lucas Silveira\\Desktop\\git\\Nova pasta\\teste-bitti\\Api\\TesteBitti.Api\\TesteBitti.Api.csproj",
       "projectName": "TesteBitti.Api",
-      "projectPath": "C:\\Users\\Lucas Silveira\\Documents\\teste-bitti\\teste-bitti\\Api\\TesteBitti.Api\\TesteBitti.Api.csproj",
+      "projectPath": "C:\\Users\\Lucas Silveira\\Desktop\\git\\Nova pasta\\teste-bitti\\Api\\TesteBitti.Api\\TesteBitti.Api.csproj",
       "packagesPath": "C:\\Users\\Lucas Silveira\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lucas Silveira\\Documents\\teste-bitti\\teste-bitti\\Api\\TesteBitti.Api\\obj\\",
+      "outputPath": "C:\\Users\\Lucas Silveira\\Desktop\\git\\Nova pasta\\teste-bitti\\Api\\TesteBitti.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12998,11 +12998,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Lucas Silveira\\Documents\\teste-bitti\\teste-bitti\\Api\\TesteBitti.Domain\\TesteBitti.Domain.csproj": {
-              "projectPath": "C:\\Users\\Lucas Silveira\\Documents\\teste-bitti\\teste-bitti\\Api\\TesteBitti.Domain\\TesteBitti.Domain.csproj"
+            "C:\\Users\\Lucas Silveira\\Desktop\\git\\Nova pasta\\teste-bitti\\Api\\TesteBitti.Domain\\TesteBitti.Domain.csproj": {
+              "projectPath": "C:\\Users\\Lucas Silveira\\Desktop\\git\\Nova pasta\\teste-bitti\\Api\\TesteBitti.Domain\\TesteBitti.Domain.csproj"
             },
-            "C:\\Users\\Lucas Silveira\\Documents\\teste-bitti\\teste-bitti\\Api\\TesteBitti.Repositories\\TesteBitti.Repositories.csproj": {
-              "projectPath": "C:\\Users\\Lucas Silveira\\Documents\\teste-bitti\\teste-bitti\\Api\\TesteBitti.Repositories\\TesteBitti.Repositories.csproj"
+            "C:\\Users\\Lucas Silveira\\Desktop\\git\\Nova pasta\\teste-bitti\\Api\\TesteBitti.Repositories\\TesteBitti.Repositories.csproj": {
+              "projectPath": "C:\\Users\\Lucas Silveira\\Desktop\\git\\Nova pasta\\teste-bitti\\Api\\TesteBitti.Repositories\\TesteBitti.Repositories.csproj"
             }
           }
         }

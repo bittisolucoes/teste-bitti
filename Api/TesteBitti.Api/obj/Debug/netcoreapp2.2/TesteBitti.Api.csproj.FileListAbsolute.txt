@@ -55,3 +55,22 @@ C:\Users\Lucas Silveira\Documents\teste-bitti\teste-bitti\Api\TesteBitti.Api\obj
 C:\Users\Lucas Silveira\Documents\teste-bitti\teste-bitti\Api\TesteBitti.Api\obj\Debug\netcoreapp2.2\TesteBitti.Api.csproj.CopyComplete
 C:\Users\Lucas Silveira\Documents\teste-bitti\teste-bitti\Api\TesteBitti.Api\obj\Debug\netcoreapp2.2\TesteBitti.Api.dll
 C:\Users\Lucas Silveira\Documents\teste-bitti\teste-bitti\Api\TesteBitti.Api\obj\Debug\netcoreapp2.2\TesteBitti.Api.pdb
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\bin\Debug\netcoreapp2.2\TesteBitti.Api.deps.json
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\bin\Debug\netcoreapp2.2\TesteBitti.Api.runtimeconfig.json
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\bin\Debug\netcoreapp2.2\TesteBitti.Api.runtimeconfig.dev.json
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\bin\Debug\netcoreapp2.2\TesteBitti.Api.dll
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\bin\Debug\netcoreapp2.2\TesteBitti.Api.pdb
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\bin\Debug\netcoreapp2.2\TesteBitti.Domain.dll
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\bin\Debug\netcoreapp2.2\TesteBitti.Repositories.dll
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\bin\Debug\netcoreapp2.2\TesteBitti.Repositories.pdb
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\bin\Debug\netcoreapp2.2\TesteBitti.Domain.pdb
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\obj\Debug\netcoreapp2.2\TesteBitti.Api.csprojAssemblyReference.cache
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\obj\Debug\netcoreapp2.2\TesteBitti.Api.csproj.CoreCompileInputs.cache
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\obj\Debug\netcoreapp2.2\TesteBitti.Api.RazorAssemblyInfo.cache
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\obj\Debug\netcoreapp2.2\TesteBitti.Api.RazorAssemblyInfo.cs
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\obj\Debug\netcoreapp2.2\TesteBitti.Api.AssemblyInfoInputs.cache
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\obj\Debug\netcoreapp2.2\TesteBitti.Api.AssemblyInfo.cs
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\obj\Debug\netcoreapp2.2\TesteBitti.Api.RazorTargetAssemblyInfo.cache
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\obj\Debug\netcoreapp2.2\TesteBitti.Api.csproj.CopyComplete
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\obj\Debug\netcoreapp2.2\TesteBitti.Api.dll
+C:\Users\Lucas Silveira\Desktop\git\Nova pasta\teste-bitti\Api\TesteBitti.Api\obj\Debug\netcoreapp2.2\TesteBitti.Api.pdb

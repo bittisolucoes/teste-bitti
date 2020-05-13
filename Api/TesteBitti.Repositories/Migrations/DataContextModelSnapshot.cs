@@ -56,7 +56,7 @@ namespace TesteBitti.Repositories.Migrations
 
                     b.Property<string>("Logradouro");
 
-                    b.Property<int>("Numero");
+                    b.Property<string>("Numero");
 
                     b.Property<int?>("clienteId");
 
